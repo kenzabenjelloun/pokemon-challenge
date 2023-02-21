@@ -14,7 +14,7 @@ If you are using conda, we provide an environment.yml file for similar usage.
 
 ## Challenge description
 
-Get started with the dedicated notebook
+Get started with the [dedicated notebook](pokemon-challenge.ipynb)
 
 ## Test a submission
 
