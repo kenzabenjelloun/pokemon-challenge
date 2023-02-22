@@ -15,7 +15,6 @@ Predictions = rw.prediction_types.make_multiclass()
 # An object implementing the workflow
 workflow = rw.workflows.Classifier()
 
-
 class ClassificationError(ClassifierBaseScoreType):
     is_lower_the_better = True
     minimum = 0.0
@@ -27,7 +26,6 @@ class ClassificationError(ClassifierBaseScoreType):
 
     def __call__(self, y_true_label_index, y_pred_label_index):
         return 1 - accuracy_score(y_true_label_index, y_pred_label_index)
-
 
 class BalancedAccuracy(ClassifierBaseScoreType):
     is_lower_the_better = False
@@ -67,3 +65,4 @@ def get_train_data(path="."):
 
 def get_test_data(path="."):
     return _get_data(path, "test")
+
