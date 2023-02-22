@@ -13,7 +13,7 @@ problem_title = 'Legendary Pokemon Prediction'
 # wrapper objects for y_pred
 Predictions = rw.prediction_types.make_multiclass()
 # An object implementing the workflow
-workflow = rw.workflows.Estimator()
+workflow = rw.workflows.Classifier()
 
 
 class ClassificationError(ClassifierBaseScoreType):
