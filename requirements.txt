@@ -9,6 +9,7 @@ pandas
 matplotlib
 seaborn
 jupyter
+plotly
 
 scikit-learn
 
