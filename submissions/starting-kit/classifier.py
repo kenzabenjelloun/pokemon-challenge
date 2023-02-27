@@ -1,6 +1,5 @@
-from sklearn.base import BaseEstimator
 
-class PokemonClassifier(BaseEstimator):
+class PokemonClassifier(object):
     def __init__(self):
         pass
 
