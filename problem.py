@@ -6,6 +6,7 @@ import rampwf as rw
 from sklearn.model_selection import StratifiedShuffleSplit
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import roc_auc_score
+from rampwf.score_types.base import BaseScoreType
 from rampwf.score_types.classifier_base import ClassifierBaseScoreType
 from rampwf.score_types.macro_averaged_recall import MacroAveragedRecall
 
