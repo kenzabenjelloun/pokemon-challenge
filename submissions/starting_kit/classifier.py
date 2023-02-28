@@ -44,7 +44,7 @@ class FeatureExtractor(BaseEstimator):
 
 class Classifier(BaseEstimator):
     def __init__(self):
-        self.model = LogisticRegression()
+        self.model = LogisticRegression(max_iter=500)
  
         
     def fit(self, X, y):
