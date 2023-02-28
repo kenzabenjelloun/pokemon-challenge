@@ -76,19 +76,24 @@ score_types = [
     ROCAUC(name='Roc_Auc', precision=2),
 ]
 
+
 def get_cv(X, y):
     cv = StratifiedShuffleSplit(n_splits=5, test_size=0.2, random_state=442)
     return cv.split(X, y)
 
+
 def _get_data(path='.', split='train'):
     path = os.path.join(path, "data", split, f"{split}.npy")
+
     with open(path, 'rb') as f:
         X = np.load(f, allow_pickle=True)
         y = np.load(f, allow_pickle=True)
     return X, y
 
 def get_train_data(path="."):
+    
     return _get_data(path, "train")
+
 
 def get_test_data(path="."):
     return _get_data(path, "test")
