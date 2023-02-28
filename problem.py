@@ -61,14 +61,17 @@ def _get_data(path='.', split='train'):
     
     columns = ['#', 'Name', 'Type 1', 'Type 2', 'HP', 'Attack', 'Defense', 'Sp. Atk',
        'Sp. Def', 'Speed', 'Generation', 'Win_ratio', 'Legendary']
-    drop_columns = ['#', 'Name', 'Type 1', 'Type 2']
+    drop_columns = ['#']
+    num_cols = ['HP', 'Attack', 'Defense', 'Sp. Atk','Sp. Def', 'Speed', 'Generation', 'Win_ratio']
 
     X = pd.DataFrame(X, columns = columns)
     X = X.drop(columns=drop_columns)
+    X[num_cols] = X[num_cols].astype(float)
+                
+                
     y = X['Legendary'].astype('int')
     X = X.drop(columns=['Legendary'])
-    X['Win_ratio'] = X['Win_ratio'].fillna(X['Win_ratio'].median())
-    return X.to_numpy(), y.to_numpy()
+    return X, y
 
 def get_train_data(path="."):
     return _get_data(path, "train")
