@@ -1,18 +1,15 @@
 import numpy as np
 from sklearn.base import BaseEstimator
+from sklearn.linear_model import LogisticRegression
 
 class Classifier(BaseEstimator):
     def __init__(self):
-        pass
+        self.model = LogisticRegression(max_iter=500)
 
     def fit(self, X, y):
-        classes = ['Legendary', 'NotLegendary']
-        self.n_classes = len(classes)
-        pass
+        self.model.fit(X, y)
 
     def predict_proba(self, X):
         #Returns a random list of 0 and 1, whether the pokemon is legendary or not
-        legendary_proba = np.random.rand(len(X), self.n_classes)
-        legendary_proba /= legendary_proba.sum(axis=1)[:, None]
-        print(legendary_proba.shape)
-        return legendary_proba
+        legendary_pred_probas = self.model.predict_proba(X)
+        return legendary_pred_probas
