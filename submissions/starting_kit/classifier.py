@@ -13,6 +13,6 @@ class Classifier(BaseEstimator):
     def predict_proba(self, X):
         #Returns a random list of 0 and 1, whether the pokemon is legendary or not
         legendary_proba = np.random.rand(len(X), self.n_classes)
-        legendary_proba /= legendary_proba.sum(axis=1)[:, np.newaxis]
+        legendary_proba /= legendary_proba.sum(axis=1)[:, None]
         print(legendary_proba.shape)
         return legendary_proba
